@@ -1,5 +1,8 @@
 package com.example.attendance;
 import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -55,34 +58,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       s1 = findViewById(R.id.button4);
-       t1  = findViewById(R.id.button5);
-        SharedPreferences preferences = getSharedPreferences("attendance",MODE_PRIVATE);
-        String checkbox = preferences.getString("b","");
-        String log = preferences.getString("login","");
-        if(checkbox.equals("true")){
-            if(log.equals("student")){
-                Intent intent = new Intent(MainActivity.this,qrgene.class);
-                startActivity(intent);}
-            else if(log.equals("teacher")){
-                Intent intent = new Intent(MainActivity.this,Teacher.class);
-                startActivity(intent);
-            }
-        }else if(checkbox.equals("false")){
-            Toast.makeText(this,"please sign in",Toast.LENGTH_SHORT).show();
-        }
-        s1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Student.class));
-            }
-        });
-        t1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Tlogin.class));
-            }
-        });
+        Intent intent = new Intent(MainActivity.this,Teacher.class);
+        startActivity(intent);
+//       s1 = findViewById(R.id.button4);
+//       t1  = findViewById(R.id.button5);
+//        SharedPreferences preferences = getSharedPreferences("attendance",MODE_PRIVATE);
+//        String checkbox = preferences.getString("b","");
+//        String log = preferences.getString("login","");
+//        if(checkbox.equals("true")){
+//            if(log.equals("student")){
+//                Intent intent = new Intent(MainActivity.this,qrgene.class);
+//                startActivity(intent);}
+//            else if(log.equals("teacher")){
+//                Intent intent = new Intent(MainActivity.this,Teacher.class);
+//                startActivity(intent);
+//            }
+//        }else if(checkbox.equals("false")){
+//            Toast.makeText(this,"please sign in",Toast.LENGTH_SHORT).show();
+//        }
+//        s1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, Student.class));
+//            }
+//        });
+//        t1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, Tlogin.class));
+//            }
+//        });
     }
 
 

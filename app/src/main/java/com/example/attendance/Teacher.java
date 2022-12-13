@@ -47,98 +47,99 @@ public class Teacher extends AppCompatActivity implements View.OnClickListener{
         ivqr = findViewById(R.id.imageView);
         scanBtn.setOnClickListener(this::onClick);
         contBtn.setOnClickListener(this::onCont);
-        crex.setOnClickListener(this::excelcreator);
+        crex.setVisibility(View.INVISIBLE);
+//        crex.setOnClickListener(this::excelcreator);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
     }
-    private void excelcreator(View view) {
-//        int dimen = ivqr.getWidth() < ivqr.getHeight() ? ivqr.getWidth() : ivqr.getHeight();
-//        dimen = dimen * 3 / 4;
-//        QRGEncoder qrgEncoder = new QRGEncoder("hello world", null, QRGContents.Type.TEXT, dimen);
-//        Bitmap bitmap = qrgEncoder.getBitmap();
-//        ivqr.setImageBitmap(bitmap);
-        Toast.makeText(Teacher.this, "no functions yet", Toast.LENGTH_SHORT).show();
-//        SimpleDateFormat date1 = new SimpleDateFormat("dd:MM:yyyy");
-//        String format = date1.format(new Date());
-//         rltdatabase r = new rltdatabase(); ////important
-//         r.add_node("04:12:2022","Dec","rlt");
-//        String format = "04:12:2022";
-//        String format1 = "03:12:2022";
-//        database f = new database(getApplicationContext());
-//        f.read(format);
-//        f.read(format1);
-//        String replace = format.replace("04", "05");
-//        f.read(replace);
-
-
-//        try{
-//            String format = "03:12:2022";
-//            HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-//            HSSFSheet hssfSheet = hssfWorkbook.createSheet(format);
-//            FirebaseFirestore db = FirebaseFirestore.getInstance();
-//            int i = 1;
+//    private void excelcreator(View view) {
+////        int dimen = ivqr.getWidth() < ivqr.getHeight() ? ivqr.getWidth() : ivqr.getHeight();
+////        dimen = dimen * 3 / 4;
+////        QRGEncoder qrgEncoder = new QRGEncoder("hello world", null, QRGContents.Type.TEXT, dimen);
+////        Bitmap bitmap = qrgEncoder.getBitmap();
+////        ivqr.setImageBitmap(bitmap);
+//        Toast.makeText(Teacher.this, "no functions yet", Toast.LENGTH_SHORT).show();
+////        SimpleDateFormat date1 = new SimpleDateFormat("dd:MM:yyyy");
+////        String format = date1.format(new Date());
+////         rltdatabase r = new rltdatabase(); ////important
+////         r.add_node("04:12:2022","Dec","rlt");
+////        String format = "04:12:2022";
+////        String format1 = "03:12:2022";
+////        database f = new database(getApplicationContext());
+////        f.read(format);
+////        f.read(format1);
+////        String replace = format.replace("04", "05");
+////        f.read(replace);
 //
-//            while (i<=31){
-//                int finalI = i;
-//                db.collection(format).get();
-//                db.collection(format)
-//                        .get()
-//                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                                if (task.isSuccessful()) {
-//                                    for (QueryDocumentSnapshot document : task.getResult()) {
-//                                        String k  = document.getId();
-//                                        DocumentReference docRef = db.collection(format).document(k+"Arrival time");
-//                                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                                            @Override
-//                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                                                if (task.isSuccessful()) {
-//                                                    DocumentSnapshot document1 = task.getResult();
-//                                                    if (document1.exists()) {
-//                                                        String at = ""+document1.getData();
-//                                                        int val = finalI;
-//                                                        HSSFRow hssfRow = hssfSheet.createRow(val);
-//                                                        val = val+1;
-//                                                        HSSFCell hssfCell1 = hssfRow.createCell(0);
-//                                                        HSSFCell hssfCell2 = hssfRow.createCell(1);
-//                                                        HSSFCell hssfCell3 = hssfRow.createCell(2);
-//                                                        hssfCell1.setCellValue(format);
-//                                                        hssfCell2.setCellValue(k);
-//                                                        hssfCell3.setCellValue(at);
-//                                                        try{
-//                                                            if(!filePath.exists()){
-//                                                                filePath.createNewFile();
-//                                                            }
-//                                                            FileOutputStream fileOutputStream = new FileOutputStream(filePath);
-//                                                            hssfWorkbook.write(fileOutputStream);
-//                                                            if(fileOutputStream!=null){
-//                                                                fileOutputStream.flush();
-//                                                                fileOutputStream.close();
-//                                                            }
-//                                                        }catch (Exception e){
-//                                                            e.printStackTrace();
-//                                                        }
-//                                                    } else {
-//                                                        Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
-//                                                    }
-//                                                } else {
-//                                                    Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
-//                                                }
-//                                            }
-//                                        });
-//                                    }
-//                                } else {
-//                                    Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
-//                                }
-//                            }
-//                        });
-//                i = i+1;
-//            }
-//        }catch (Exception e){
-//            Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
-//        }
-    }
+//
+////        try{
+////            String format = "03:12:2022";
+////            HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+////            HSSFSheet hssfSheet = hssfWorkbook.createSheet(format);
+////            FirebaseFirestore db = FirebaseFirestore.getInstance();
+////            int i = 1;
+////
+////            while (i<=31){
+////                int finalI = i;
+////                db.collection(format).get();
+////                db.collection(format)
+////                        .get()
+////                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+////                            @Override
+////                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+////                                if (task.isSuccessful()) {
+////                                    for (QueryDocumentSnapshot document : task.getResult()) {
+////                                        String k  = document.getId();
+////                                        DocumentReference docRef = db.collection(format).document(k+"Arrival time");
+////                                        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+////                                            @Override
+////                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+////                                                if (task.isSuccessful()) {
+////                                                    DocumentSnapshot document1 = task.getResult();
+////                                                    if (document1.exists()) {
+////                                                        String at = ""+document1.getData();
+////                                                        int val = finalI;
+////                                                        HSSFRow hssfRow = hssfSheet.createRow(val);
+////                                                        val = val+1;
+////                                                        HSSFCell hssfCell1 = hssfRow.createCell(0);
+////                                                        HSSFCell hssfCell2 = hssfRow.createCell(1);
+////                                                        HSSFCell hssfCell3 = hssfRow.createCell(2);
+////                                                        hssfCell1.setCellValue(format);
+////                                                        hssfCell2.setCellValue(k);
+////                                                        hssfCell3.setCellValue(at);
+////                                                        try{
+////                                                            if(!filePath.exists()){
+////                                                                filePath.createNewFile();
+////                                                            }
+////                                                            FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+////                                                            hssfWorkbook.write(fileOutputStream);
+////                                                            if(fileOutputStream!=null){
+////                                                                fileOutputStream.flush();
+////                                                                fileOutputStream.close();
+////                                                            }
+////                                                        }catch (Exception e){
+////                                                            e.printStackTrace();
+////                                                        }
+////                                                    } else {
+////                                                        Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
+////                                                    }
+////                                                } else {
+////                                                    Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
+////                                                }
+////                                            }
+////                                        });
+////                                    }
+////                                } else {
+////                                    Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
+////                                }
+////                            }
+////                        });
+////                i = i+1;
+////            }
+////        }catch (Exception e){
+////            Toast.makeText(MainActivity.this,"error",Toast.LENGTH_LONG).show();
+////        }
+//    }
 
     private void onCont(View view) {
         try{
