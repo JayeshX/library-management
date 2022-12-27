@@ -10,29 +10,19 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="142dp"
-        android:layout_height="74dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="133dp"
-        android:layout_marginBottom="452dp"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:layout_alignTop="@id/button5"
+        android:layout_marginTop="-200dp"
+        android:layout_centerHorizontal="true"
         android:text="Student" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="159dp"
-        android:layout_height="85dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="129dp"
-        android:layout_marginTop="403dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="243dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="100dp"
         android:text="Teacher" />
 </RelativeLayout>
